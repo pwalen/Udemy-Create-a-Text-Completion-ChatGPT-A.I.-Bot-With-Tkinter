@@ -24,7 +24,10 @@ my_text = Text(text_frame,
                bg="#343638",
                width=65,
                bd=1,
-               fg="#d6d6d6")
+               fg="#d6d6d6",
+               relief=FLAT,
+               wrap=WORD,
+               selectbackground="#1f538d")
 my_text.grid(row=0, column=0)
 
 
