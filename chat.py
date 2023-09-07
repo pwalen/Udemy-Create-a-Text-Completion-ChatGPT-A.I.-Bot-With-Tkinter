@@ -49,5 +49,11 @@ chat_entry = customtkinter.CTkEntry(
 )
 chat_entry.pack(pady=10)
 
+# Create Button Frame
+button_frame = customtkinter.CTkFrame(root, fg_color="#242424")
+button_frame.pack(pady=10)
+
+
+
 
 root.mainloop()
