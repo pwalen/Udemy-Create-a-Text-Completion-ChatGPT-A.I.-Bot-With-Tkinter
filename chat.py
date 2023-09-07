@@ -27,6 +27,10 @@ def clear():
 def key():
     pass
 
+# Save the API key
+def save_key():
+    pass
+
 
 # Create Text Frame
 text_frame = customtkinter.CTkFrame(root)
@@ -95,7 +99,7 @@ api_frame = customtkinter.CTkFrame(root, border_width=1)
 api_frame.pack(pady=10)
 root.mainloop()
 
-# Add API Key Widget
+# Add API Entry Widget
 api_entry = customtkinter.CTkEntry(
     api_frame,
     placeholder_text="Enter Your API Key",
@@ -104,3 +108,18 @@ api_entry = customtkinter.CTkEntry(
     border_width=1
 )
 api_entry.grid(row=0, column=0, padx=20, pady=20)
+
+# Add API Button
+api_save_button = customtkinter.CTkButton(
+    api_frame,
+    text="Save Key",
+    command=save_key
+)
+api_save_button.grid(row=0, column=1, padx=10)
+
+
+
+
+
+
+root.mainloop()
