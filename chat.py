@@ -15,6 +15,19 @@ root.iconbitmap("ai_lt.ico")  # https://tkinter.com/images/ai_lt.ico
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 
+# Submit To ChatGPT
+def speak():
+    pass
+
+# Clear The Screens
+def clear():
+    pass
+
+# Do API Stuff
+def key():
+    pass
+
+
 # Create Text Frame
 text_frame = customtkinter.CTkFrame(root)
 text_frame.pack(pady=20)
@@ -53,7 +66,28 @@ chat_entry.pack(pady=10)
 button_frame = customtkinter.CTkFrame(root, fg_color="#242424")
 button_frame.pack(pady=10)
 
+# Create Submit Button
+submit_button = customtkinter.CTkButton(
+    button_frame,
+    text="Speak to ChatGPT",
+    command=speak,
+)
+submit_button.grid(row=0, column=0, padx=25)
 
+# Create Clear Button
+clear_button = customtkinter.CTkButton(
+    button_frame,
+    text="Clear Response",
+    command=clear,
+)
+clear_button.grid(row=0, column=1, padx=35)
 
+# Create API Button
+api_button = customtkinter.CTkButton(
+    button_frame,
+    text="Update API Key",
+    command=key,
+)
+api_button.grid(row=0, column=2, padx=25)
 
 root.mainloop()
