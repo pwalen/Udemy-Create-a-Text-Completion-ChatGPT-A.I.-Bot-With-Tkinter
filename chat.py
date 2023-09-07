@@ -13,7 +13,7 @@ root.iconbitmap("ai_lt.ico")  # https://tkinter.com/images/ai_lt.ico
 
 # Set Color Scheme
 customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("dark-blue")
+customtkinter.set_default_color_theme("green")
 
 # Submit To ChatGPT
 def speak():
@@ -90,4 +90,7 @@ api_button = customtkinter.CTkButton(
 )
 api_button.grid(row=0, column=2, padx=25)
 
+# Add API Key Frame
+api_frame = customtkinter.CTkFrame(root, border_width=1)
+api_frame.pack(pady=10)
 root.mainloop()
