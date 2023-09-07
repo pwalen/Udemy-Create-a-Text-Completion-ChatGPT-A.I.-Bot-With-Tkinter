@@ -30,6 +30,12 @@ my_text = Text(text_frame,
                selectbackground="#1f538d")
 my_text.grid(row=0, column=0)
 
+# Create Scrollbar for text widget
+text_scroll = customtkinter.CTkScrollbar(text_frame,
+                                         command=my_text.yview)
+text_scroll.grid(row=0, column=1, sticky="ns")
+
+
 
 
 
