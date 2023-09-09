@@ -8,7 +8,7 @@ import pickle
 # Initiate App
 root = customtkinter.CTk()
 root.title("ChatGPT Bot")
-root.geometry("600x600")
+root.geometry("600x750")
 root.iconbitmap("ai_lt.ico")  # https://tkinter.com/images/ai_lt.ico
 
 # Set Color Scheme
