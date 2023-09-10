@@ -96,8 +96,7 @@ api_button.grid(row=0, column=2, padx=25)
 
 # Add API Key Frame
 api_frame = customtkinter.CTkFrame(root, border_width=1)
-api_frame.pack(pady=10)
-root.mainloop()
+api_frame.pack(pady=30)
 
 # Add API Entry Widget
 api_entry = customtkinter.CTkEntry(
