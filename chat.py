@@ -25,11 +25,17 @@ def clear():
 
 # Do API Stuff
 def key():
-    pass
+    # Resize App Larger
+    root.geometry("600x750")
+    # Reshow API Frame
+    api_frame.pack(pady=30)
 
 # Save the API key
 def save_key():
-    pass
+    # Hide API Frame
+    api_frame.pack_forget()
+    # Resize App Smaller
+    root.geometry("600x600")
 
 
 # Create Text Frame
@@ -122,3 +128,4 @@ api_save_button.grid(row=0, column=1, padx=10)
 
 
 root.mainloop()
+
