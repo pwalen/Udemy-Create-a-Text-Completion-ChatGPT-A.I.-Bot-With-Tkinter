@@ -25,10 +25,31 @@ def clear():
 
 # Do API Stuff
 def key():
+    # Define our filename
+    file_name = "api_key"
+
+    if os.path.isfile(file_name):
+        # Open the file
+        input_file = open(file_name, "rb")
+
+        # Load the data from the file into a variable
+        stuff = pickle.load(input_file)
+
+        # Output stuff to our entry box
+        api_entry.insert(END, stuff)
+    else:
+        # Create the file
+        input_file = open(file_name, "wb")
+
+        # Close the file
+        input_file.close()
+    
     # Resize App Larger
     root.geometry("600x750")
     # Reshow API Frame
     api_frame.pack(pady=30)
+
+
 
 # Save the API key
 def save_key():
