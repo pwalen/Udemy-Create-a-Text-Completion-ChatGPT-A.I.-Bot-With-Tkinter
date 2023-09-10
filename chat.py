@@ -53,6 +53,16 @@ def key():
 
 # Save the API key
 def save_key():
+    # Define our filename
+    filename = "api_key"
+
+    # Open the file
+    output_file = open(filename, "wb")
+
+    # Actually add the data to the file
+    pickle.dump(api_entry.get(), output_file)
+
+
     # Hide API Frame
     api_frame.pack_forget()
     # Resize App Smaller
