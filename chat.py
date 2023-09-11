@@ -26,11 +26,11 @@ def clear():
 # Do API Stuff
 def key():
     # Define our filename
-    file_name = "api_key"
+    filename = "api_key"
 
-    if os.path.isfile(file_name):
+    if os.path.isfile(filename):
         # Open the file
-        input_file = open(file_name, "rb")
+        input_file = open(filename, "rb")
 
         # Load the data from the file into a variable
         stuff = pickle.load(input_file)
@@ -39,7 +39,7 @@ def key():
         api_entry.insert(END, stuff)
     else:
         # Create the file
-        input_file = open(file_name, "wb")
+        input_file = open(filename, "wb")
 
         # Close the file
         input_file.close()
