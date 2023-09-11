@@ -62,6 +62,8 @@ def save_key():
     # Actually add the data to the file
     pickle.dump(api_entry.get(), output_file)
 
+    # Delete Entry Box
+    api_entry.delete(0, END)
 
     # Hide API Frame
     api_frame.pack_forget()
