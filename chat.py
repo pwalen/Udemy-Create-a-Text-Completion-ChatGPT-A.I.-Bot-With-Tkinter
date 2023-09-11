@@ -28,21 +28,25 @@ def key():
     # Define our filename
     filename = "api_key"
 
-    if os.path.isfile(filename):
-        # Open the file
-        input_file = open(filename, "rb")
+    try:
+        if os.path.isfile(filename):
+            # Open the file
+            input_file = open(filename, "rb")
 
-        # Load the data from the file into a variable
-        stuff = pickle.load(input_file)
+            # Load the data from the file into a variable
+            stuff = pickle.load(input_file)
 
-        # Output stuff to our entry box
-        api_entry.insert(END, stuff)
-    else:
-        # Create the file
-        input_file = open(filename, "wb")
+            # Output stuff to our entry box
+            api_entry.insert(END, stuff)
+        else:
+            # Create the file
+            input_file = open(filename, "wb")
 
-        # Close the file
-        input_file.close()
+            # Close the file
+            input_file.close()
+    
+    except Exception as e:
+        my_text.insert(END, f"\n\nThere was an error\n\n{e}")
     
     # Resize App Larger
     root.geometry("600x750")
@@ -56,19 +60,23 @@ def save_key():
     # Define our filename
     filename = "api_key"
 
-    # Open the file
-    output_file = open(filename, "wb")
+    try:
+        # Open the file
+        output_file = open(filename, "wb")
 
-    # Actually add the data to the file
-    pickle.dump(api_entry.get(), output_file)
+        # Actually add the data to the file
+        pickle.dump(api_entry.get(), output_file)
 
-    # Delete Entry Box
-    api_entry.delete(0, END)
+        # Delete Entry Box
+        api_entry.delete(0, END)
 
-    # Hide API Frame
-    api_frame.pack_forget()
-    # Resize App Smaller
-    root.geometry("600x600")
+        # Hide API Frame
+        api_frame.pack_forget()
+        # Resize App Smaller
+        root.geometry("600x600")
+    
+    except Exception as e:
+        my_text.insert(END, f"\n\nThere was an error\n\n{e}")
 
 
 # Create Text Frame
