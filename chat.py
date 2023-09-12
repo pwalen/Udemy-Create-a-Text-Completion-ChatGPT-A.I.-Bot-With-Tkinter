@@ -46,10 +46,13 @@ def speak():
                     frequency_penalty = 0.0,
                     presence_penalty = 0.0,
                 )
-
-                my_text.insert(END, response)
+                answer = response["choices"][0]["text"].strip()
+                total_tokens = response["usage"]["total_tokens"]
+                my_text.insert(END, answer)                    
                 my_text.insert(END, "\n\n")
-                
+                my_text.insert(END, f"Total Tokens Used: {total_tokens}")
+                my_text.insert(END, "\n\n\n")
+
 
             else:
                 # Create the file
