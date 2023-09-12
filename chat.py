@@ -21,7 +21,11 @@ def speak():
 
 # Clear The Screens
 def clear():
-    pass
+    # Clear The Main Text Box
+    my_text.delete(1.0, END)
+    # Clear The Query Entry Box
+    chat_entry.delete(0, END)
+
 
 # Do API Stuff
 def key():
