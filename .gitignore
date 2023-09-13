@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 ai_lt.ico
 api_key
+.vscode
