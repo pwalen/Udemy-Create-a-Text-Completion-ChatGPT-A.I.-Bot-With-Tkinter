@@ -8,18 +8,19 @@ import pickle
 # Initiate App
 root = customtkinter.CTk()
 root.title("ChatGPT Bot")
-root.geometry("600x750")
+root.geometry("600x600")
 root.iconbitmap("ai_lt.ico")  # https://tkinter.com/images/ai_lt.ico
 
 # Set Color Scheme
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("green")
 
+# Define global variable for the API Key
+filename = "api_key"
+
 # Submit To ChatGPT
 def speak():
     if chat_entry.get():
-        # Define our filename
-        filename = "api_key"
 
         try:
             if os.path.isfile(filename):
@@ -78,9 +79,6 @@ def clear():
 
 # Do API Stuff
 def key():
-    # Define our filename
-    filename = "api_key"
-
     try:
         if os.path.isfile(filename):
             # Open the file
@@ -110,8 +108,6 @@ def key():
 
 # Save the API key
 def save_key():
-    # Define our filename
-    filename = "api_key"
 
     try:
         # Open the file
@@ -196,7 +192,13 @@ api_button.grid(row=0, column=2, padx=25)
 
 # Add API Key Frame
 api_frame = customtkinter.CTkFrame(root, border_width=1)
-api_frame.pack(pady=30)
+
+# Check if the file exists:
+if not os.path.isfile(filename):
+    # Resize App Larger
+    root.geometry("600x750")
+    # Show API Frame
+    api_frame.pack(pady=30)
 
 # Add API Entry Widget
 api_entry = customtkinter.CTkEntry(
